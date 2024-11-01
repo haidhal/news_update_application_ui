@@ -25,26 +25,38 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
- body: screenList[selectedIndex],
- 
- bottomNavigationBar: BottomNavigationBar(
-  currentIndex:   selectedIndex,
-  selectedItemColor: ColorConstatnts.mainblack,
-  unselectedItemColor: ColorConstatnts.grey,
-  items: [
-   BottomNavigationBarItem(icon: Icon(Icons.home,),label: "home"),
-   BottomNavigationBarItem(icon: Icon(Icons.blur_circular_rounded,),label: "search"),
-     BottomNavigationBarItem(icon: Icon(Icons.bookmark_border_rounded,),label: "saved"),
-       BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded,),label: "profile"),
-
-  ],
-  onTap: (int value){
-    selectedIndex = value;
-    setState(() {
-      
-    });
-  },
-  ),
+      body: screenList[selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        selectedItemColor: ColorConstatnts.mainblack,
+        unselectedItemColor: ColorConstatnts.grey,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "home"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.blur_circular_rounded,
+              ),
+              label: "search"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.bookmark_border_rounded,
+              ),
+              label: "saved"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle_rounded,
+              ),
+              label: "profile"),
+        ],
+        onTap: (int value) {
+          selectedIndex = value;
+          setState(() {});
+        },
+      ),
     );
   }
 }
